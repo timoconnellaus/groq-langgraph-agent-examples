@@ -6,10 +6,7 @@ To install dependencies:
 bun install
 ```
 
-To run:
+Examples in this project
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.4. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+- quickstart - this example demonstrates the quickstart example from the LangGraph docs using Groq `bun run quickstart`
+- tool calling - this example demonstrates adding tool calling `bun run tool-calling`

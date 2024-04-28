@@ -32,8 +32,8 @@ graph.addConditionalEdges("oracle", shouldProcessTools, {
 graph.addEdge("toolsNode", "oracle");
 graph.setEntryPoint("oracle");
 
-const runnable = graph.compile();
+const compiledGraph = graph.compile();
 
-const res = await runnable.invoke(new HumanMessage("What is sweenystudio?"));
+const res = await compiledGraph.invoke(new HumanMessage("What is langgraph?"));
 
 console.log(res);

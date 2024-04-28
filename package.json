@@ -2,6 +2,10 @@
   "name": "groq-langgraph-agent-examples",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "quickstart": "bun run ./01-quick-start-example/index.ts",
+    "tool-calling": "bun run ./02-tool-calling-example/index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

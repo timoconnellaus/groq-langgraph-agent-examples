@@ -1,0 +1,16 @@
+{
+  "name": "groq-langgraph-agent-examples",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.0.53",
+    "@langchain/groq": "^0.0.8",
+    "@langchain/langgraph": "^0.0.12"
+  }
+}

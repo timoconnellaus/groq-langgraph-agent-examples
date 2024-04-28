@@ -10,6 +10,7 @@ import { type BaseMessage } from "@langchain/core/messages";
 const searchTool = new TavilySearchResults();
 const tools = [searchTool];
 
+// Instance of ChatGroq with tools binded
 const llm = new ChatGroq({
   apiKey: process.env.GROQ_API_KEY,
   model: "llama3-8b-8192",
@@ -17,7 +18,6 @@ const llm = new ChatGroq({
 }).bindTools([searchTool]);
 
 export const toolExecutor = new ToolExecutor({ tools });
-
 const graph = new MessageGraph();
 
 graph.addNode("oracle", async (state: BaseMessage[]) => {
@@ -25,11 +25,14 @@ graph.addNode("oracle", async (state: BaseMessage[]) => {
 });
 
 graph.addNode("toolsNode", toolsNode(tools));
+
 graph.addConditionalEdges("oracle", shouldProcessTools, {
   processTools: "toolsNode",
   end: END,
 });
+
 graph.addEdge("toolsNode", "oracle");
+
 graph.setEntryPoint("oracle");
 
 const compiledGraph = graph.compile();

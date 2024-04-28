@@ -17,7 +17,7 @@ export const toolsNode = (tools: Array<StructuredTool>) => {
     const responses = await Promise.all(
       actions.map((action) => {
         return toolExecutor.invoke(action);
-      }),
+      })
     );
 
     const functionMessages = responses.map((response, index) => {
